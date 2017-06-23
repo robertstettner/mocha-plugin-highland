@@ -1,0 +1,35 @@
+{
+  "name": "mocha-plugin-highland",
+  "version": "0.0.1",
+  "description": "Mocha plugin to enable Highland streams support",
+  "main": "install.js",
+  "keywords": [
+    "highland",
+    "mocha",
+    "streams"
+  ],
+  "scripts": {
+    "pretest": "npm run lint",
+    "test": "nyc --reporter=html --reporter=text mocha",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "lint": "eslint ."
+  },
+  "author": "Robert Stettner <robert.stettner@gmail.com> (https://github.com/robertstettner)",
+  "license": "MIT",
+  "devDependencies": {
+    "coveralls": "2.13.1",
+    "eslint": "4.0.0",
+    "highland": "2.11.0",
+    "mocha": "3.4.2",
+    "nyc": "11.0.2",
+    "should": "11.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:robertstettner/mocha-plugin-highland.git"
+  },
+  "bugs": {
+    "url": "https://github.com/robertstettner/mocha-plugin-highland/issues"
+  },
+  "homepage": "https://github.com/robertstettner/mocha-plugin-highland"
+}
