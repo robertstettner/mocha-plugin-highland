@@ -51,7 +51,6 @@ describe('mocha-highland', () => {
             test.run(done);
         });
 
-
         it('should fail', function (done) {
             const test = new Runnable('promise', function () {
                 return new Promise(function (resolve, reject) {
@@ -97,7 +96,7 @@ describe('mocha-highland', () => {
 
     describe('highland stream', function () {
         it('should pass', function (done) {
-            const test = new Runnable('callback', function () {
+            const test = new Runnable('stream', function () {
                 return _([0,1,2]);
             });
 
@@ -105,7 +104,7 @@ describe('mocha-highland', () => {
         });
 
         it('should fail with error in stream', function (done) {
-            const test = new Runnable('callback', function () {
+            const test = new Runnable('stream', function () {
                 return _.fromError(new Error('You never called me back'));
             });
 
@@ -118,7 +117,7 @@ describe('mocha-highland', () => {
         });
 
         it('should fail with error thrown in side-effect', function (done) {
-            const test = new Runnable('callback', function () {
+            const test = new Runnable('stream', function () {
                 return _([0,1,2]).tap(() => {
                     throw new Error('You never called me back');
                 });
